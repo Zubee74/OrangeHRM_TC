@@ -1,0 +1,55 @@
+import { test, expect } from '@playwright/test';
+//Admin panel check
+test('test', async ({ page }) => {
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  await page.getByPlaceholder('Username').click();
+  await page.getByPlaceholder('Username').fill('Admin');
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').fill('admin123');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('link', { name: 'Admin' }).click();
+  await page.getByRole('button', { name: ' Add' }).click();
+  await page.locator('form i').first().click();
+  await page.getByRole('option', { name: 'ESS' }).getByText('ESS').click();
+  await page.getByPlaceholder('Type for hints...').click();
+  await page.getByPlaceholder('Type for hints...').fill('Zubair');
+  await page.locator('form i').nth(1).click();
+  await page.getByPlaceholder('Type for hints...').click();
+  /*await page.getByPlaceholder('Type for hints...').fill('ZubairMj');
+  await page.getByPlaceholder('Type for hints...').click();
+  await page.getByPlaceholder('Type for hints...').fill('Zubair');
+  await page.getByPlaceholder('Type for hints...').click();
+  await page.getByPlaceholder('Type for hints...').fill('Mohd.Zubair');
+  await page.getByPlaceholder('Type for hints...').click();*/
+  await page.locator('form i').nth(1).click();
+  await page.getByRole('option', { name: 'Disabled' }).click();
+  await page.locator('form i').nth(1).click();
+  await page.getByRole('option', { name: 'Enabled' }).click();
+  await page.getByRole('textbox').nth(2).click();
+  //await page.getByRole('textbox').nth(2).fill('zubee74');
+  //await page.getByRole('textbox').nth(3).click();
+  await page.getByRole('textbox').nth(3).fill('War@9876');
+  await page.getByRole('textbox').nth(4).click();
+  await page.getByRole('textbox').nth(4).fill('War@9876');
+  await page.getByRole('button', { name: 'Save' }).click();
+  /*await page.getByPlaceholder('Type for hints...').click();
+  await page.getByPlaceholder('Type for hints...').fill('xxxxxR');
+  await page.getByRole('button', { name: 'Save' }).click();*/
+  await page.getByPlaceholder('Type for hints...').click();
+  await page.getByPlaceholder('Type for hints...').fill('Zub');
+  await page.getByRole('button', { name: 'Save' }).click();
+  await page.getByRole('button', { name: 'Cancel' }).click();
+  await page.getByRole('textbox').nth(1).click();
+  await page.getByRole('textbox').nth(1).fill('Abinaya');
+  await page.locator('form i').first().click();
+  await page.getByRole('option', { name: 'ESS' }).click();
+  await page.getByPlaceholder('Type for hints...').click();
+  await page.getByPlaceholder('Type for hints...').fill('Abinaya Ragupathi');
+  await page.getByRole('option', { name: 'Abinaya Ragupathi Lakshmanachari' }).getByText('Abinaya Ragupathi Lakshmanachari').click();
+  await page.getByText('-- Select --').click();
+  await page.getByRole('option', { name: 'Enabled' }).click();
+  await page.getByRole('button', { name: 'Search' }).click();
+  await page.getByRole('link', { name: 'Dashboard' }).click();
+  await page.getByRole('listitem').filter({ hasText: 'Meghana Ganganajaiah' }).locator('i').click();
+  await page.getByRole('menuitem', { name: 'Logout' }).click();
+});
