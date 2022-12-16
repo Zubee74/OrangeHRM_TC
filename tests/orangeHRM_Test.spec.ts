@@ -101,7 +101,7 @@ test('test', async ({ page }) => {
     await page.locator('form i').nth(1).click();
     await page.getByRole('option', { name: 'Enabled' }).click();
     await page.getByRole('textbox').nth(2).click();
-    //await page.getByRole('textbox').nth(2).fill('zubee74');
+    await page.getByRole('textbox').nth(2).fill('zubee74');
     //await page.getByRole('textbox').nth(3).click();
     await page.getByRole('textbox').nth(3).fill('War@9876');
     await page.getByRole('textbox').nth(4).click();
