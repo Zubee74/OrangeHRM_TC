@@ -107,9 +107,9 @@ test('test', async ({ page }) => {
     await page.getByRole('textbox').nth(4).click();
     await page.getByRole('textbox').nth(4).fill('War@9876');
     await page.getByRole('button', { name: 'Save' }).click();
-    /*await page.getByPlaceholder('Type for hints...').click();
+    await page.getByPlaceholder('Type for hints...').click();
     await page.getByPlaceholder('Type for hints...').fill('xxxxxR');
-    await page.getByRole('button', { name: 'Save' }).click();*/
+    await page.getByRole('button', { name: 'Save' }).click();
     await page.getByPlaceholder('Type for hints...').click();
     await page.getByPlaceholder('Type for hints...').fill('Zub');
     await page.getByRole('button', { name: 'Save' }).click();
