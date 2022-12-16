@@ -90,12 +90,12 @@ test('test', async ({ page }) => {
     await page.getByPlaceholder('Type for hints...').fill('Zubair');
     await page.locator('form i').nth(1).click();
     await page.getByPlaceholder('Type for hints...').click();
-    /*await page.getByPlaceholder('Type for hints...').fill('ZubairMj');
+    await page.getByPlaceholder('Type for hints...').fill('ZubairMj');
     await page.getByPlaceholder('Type for hints...').click();
     await page.getByPlaceholder('Type for hints...').fill('Zubair');
     await page.getByPlaceholder('Type for hints...').click();
     await page.getByPlaceholder('Type for hints...').fill('Mohd.Zubair');
-    await page.getByPlaceholder('Type for hints...').click();*/
+    await page.getByPlaceholder('Type for hints...').click();
     await page.locator('form i').nth(1).click();
     await page.getByRole('option', { name: 'Disabled' }).click();
     await page.locator('form i').nth(1).click();
