@@ -4,19 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"npx playwright test",
-    "report":"npx playwright show-report",
-    "debug":"npx playwright --debug",
-    "trace":"npx playwright show-trace",
-    "codegen":"npx playwright codegen",
-    "chromium":" npx playwright test --project=chromium",
-    "headed":"npx playwright test --headed"
-
-    },
+    "test": "npx playwright test",
+    "report": "npx playwright show-report",
+    "debug": "npx playwright --debug",
+    "trace": "npx playwright show-trace",
+    "codegen": "npx playwright codegen",
+    "chromium": " npx playwright test --project=chromium",
+    "headed": "npx playwright test --headed"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.28.1"
+  },
+  "dependencies": {
+    "cucumber": "^6.0.7"
   }
 }
