@@ -1,12 +1,15 @@
-#Login verification TC_01
-Feature: Login OrangeHRM in order to login as a admin|user
-    Scenario: Login into OrangeHRM by using credentials
-        Given that a admin|user with credential Username and Password
+Background : Login credentials resusable state
+ Given that a admin|user with credential Username and Password
         And user viewing OrangeHRM loginPage
         When user entered Username and Password 
             | Username | Admin | 
             | Password | admin123| 
-        Then user should login into admin panel
+        Then user should login into user dashboard panel
+
+#Login verification TC_01
+Feature: Login OrangeHRM in order to login as a admin|user
+    Scenario: Login into OrangeHRM by using credentials
+      
         And user hover over The menuitems 
         And user clicked on profile icon
         And user clicked on logout option
@@ -15,12 +18,7 @@ Feature: Login OrangeHRM in order to login as a admin|user
 #Admin panel TC_02         
 Feature: Admin panel after succesful login to dashboard
     Scenario: Login into OrangeHRM admin panel
-        Given that a admin|user with Username Password
-        And user enter the user credentials
-        When user enter Username and Password
-            | Username | Admin | 
-            | Password | admin123| 
-        Then user should login into OrangeHRM dashboard
+    
         And user hover over admin left side menuitems
         And user clicked on admin 
         Then admin panel should be open
@@ -28,23 +26,14 @@ Feature: Admin panel after succesful login to dashboard
 #Dashboard TC_03
 Feature: Dashboard panel after succesful login to dashboard 
     Scenario: Login into OrangeHRM dashboard panel
-        Given that a admin|user with Username Password
-        And user enter the user credentials
-        When user enter Username and Password
-            | Username | Admin | 
-            | Password | admin123| 
+     
         Then user should login into OrangeHRM dashboard 
         Then dashboard panel should be open
 
 #Admin/User management TC_04
 Feature: User management, User should be search-reset, add, view, and delete from admin panel
     Scenario: Admin should be search|reset, add, view, and delete users from admin panel
-        Given that a admin|user with Username and Password
-        And user enter the user credentials
-        When user enter Username and Password
-            | Username | Admin | 
-            | Password | admin@123| 
-        Then user should login into OrangeHRM admin panel
+     
         And user search user with Username, User role, employee name, and status from records 
         And user add new user|admin to the record with
             | Username | Admin | 
@@ -58,11 +47,7 @@ Feature: User management, User should be search-reset, add, view, and delete fro
 #Logout verification TC_05
 Feature: Profile Options drop-down verification
     Scenario: User profile options with Logout functionality
-        Given that a admin|user with Username and Password
-        When user enter Username and Password
-            | Username | Admin | 
-            | Password | admin@123|
-        Then user should login to OrangeHRM dashboard successfully
+       
         And user hover to user profile icon
         And user clicked user profile icon 
         And user got drop-down options about, Support, Change password and Logout
@@ -72,11 +57,7 @@ Feature: Profile Options drop-down verification
 #PIM panel verifications TC_06
 Feature: PIM pane verifaction of OrangeHRM
     Scenario: User enter to dashboard and Hover to PIM panel
-        Given that a admin|user with Username and Password 
-        When user enter Username and Password
-            | Username | Admin |
-            | Password | admin123 |
-        Then User should login to OrangeHRM dashboard
+       
         And User hover and clicked to PIM panel 
         And PIM panel should be open with Employee information listed
         When User clicked on employee list 
@@ -96,11 +77,7 @@ Feature: PIM pane verifaction of OrangeHRM
 #Maintanance panel OrangeHRM TC_07
 Feature: User enter to dashboard and hover to maintainance panel
      Scenario: User enter to dashboard and Hover to PIM panel
-        Given that a admin|user with Username and Password 
-        When user enter Username and Password
-            | Username | Admin |
-            | Password | admin123 |
-        Then User should login to OrangeHRM dashboard
+      
         And User hover and clicked to Maintanance panel 
         Then User should invoke for Administrator Access
         And User should enter the credentials
